@@ -1,10 +1,17 @@
 <h1>
-  {{question.q}}
+  {{question.qn}}
 </h1>
 
 <div>
   <label>
-    <input [(ngModel)]="response"
+    <input [(ngModel)]="response" 
+    (keyup.enter)="onEnter()"
     placeholder="Type answer here">
   </label>
 </div>
+<h2 *ngIf="feedback">{{feedback}}</h2>
+<!-- <ul class="prevQuestions">
+  <li *ngFor="let prevQuestion of prevQuestions">
+    {{prevQuestion.qn}}<br> {{prevQuestion.answer}}
+  </li>
+</ul> -->
